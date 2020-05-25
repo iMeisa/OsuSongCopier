@@ -15,6 +15,10 @@ def get_song_name(folder_name):
 
 
 login_name = os.getlogin()
+if not os.path.exists('osupath.txt'):
+	f = open('osupath.txt', 'w')
+	f.write('ONLY MODIFY THIS FILE IF YOUR OSU! FOLDER HAS A CUSTOM PATH (Example path: C:\\Users\\user\\AppData\\Local\\osu!\\Songs)\n#Write path here')
+
 modified_path =  open('osupath.txt', 'r').readlines()
 custom_path = modified_path[1]
 if custom_path == '#Write path here':
